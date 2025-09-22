@@ -21,19 +21,24 @@ Realizar un **análisis exploratorio y segmentación de clientes** a partir del 
 
 ## 🔧 Proceso
 
-### 1. Análisis Exploratorio
+### 1. Carga y exploración inicial
+- Importación de datos desde **GitHub** para asegurar reproducibilidad.  
+- Inspección de dimensiones, tipos de datos y primeras filas.  
+- Resumen de uso de memoria y verificación de valores faltantes.
+
+### 2. Análisis Exploratorio
 - Estadísticas descriptivas de las variables numéricas.  
-- Distribución por género (balance relativo entre hombres y mujeres).  
+- Distribución por género (conteo y porcentajes).  
 - Análisis de **rangos y promedios** en edad, ingreso e índice de gasto.  
 - Detección de **outliers con IQR** en las variables numéricas.  
 
-### 2. Visualización
+### 3. Visualización
 - Histogramas de las variables principales (`Age`, `Annual Income`, `Spending Score`).  
-- Gráficos de dispersión para observar correlaciones.  
-- Mapas de calor (heatmaps) para visualizar patrones.  
+- Gráficos de dispersión para observar correlaciones entre variables.  
+- Pairplots para explorar relaciones multivariadas.
 
-### 3. Clustering (K-Means)
-- Normalización de variables para mejorar la separación de clusters.  
+### 4. Clustering (K-Means)
+- Selección de variables de segmentación (`Age`, `Annual Income`, `Spending Score`).  
 - Aplicación de **método del codo (Elbow Method)** para determinar el número óptimo de clusters.  
 - Entrenamiento del modelo K-Means y asignación de etiquetas de cluster.  
 - Visualización de los grupos formados en 2D (por ejemplo, Ingreso vs Spending Score).  
@@ -46,13 +51,13 @@ Realizar un **análisis exploratorio y segmentación de clientes** a partir del 
   - Clientes de **alto ingreso pero bajo gasto**.  
   - Clientes de **bajo ingreso y bajo gasto**.  
   - Clientes de **alto gasto con ingresos medios** (potenciales clientes premium).  
-- Los clusters permiten al shopping **diseñar estrategias de marketing personalizadas**.  
+- El clustering permitió detectar perfiles útiles para diseñar **estrategias de marketing personalizadas**.  
 
 ---
 
 ## 🔍 Reflexión
 - El dataset es pequeño (200 clientes), pero suficiente para ilustrar el poder de la segmentación.  
-- El clustering demostró que hay **patrones claros de consumo** que pueden aprovecharse.  
+- El análisis de outliers confirmó que algunos clientes presentan valores extremos en edad e ingresos, aunque no afectan gravemente la segmentación.  
 - Posibles mejoras:  
   - Usar más variables de comportamiento (por ejemplo, frecuencia de visitas, compras reales).  
   - Comparar con otros algoritmos de clustering (DBSCAN, jerárquico).  
